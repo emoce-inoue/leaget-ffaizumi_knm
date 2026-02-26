@@ -1,10 +1,10 @@
 :root {
   /* font */
-  --font-sans: 'Noto Sans JP', 'Noto Sans', 'Hiragino Kaku Gothic ProN', meiryo, sans-serif;
+  --font-sans-jp: 'Noto Sans JP', 'Noto Sans', 'Hiragino Kaku Gothic ProN', meiryo, sans-serif;
+  --font-sans: 'Noto Sans', 'Noto Sans JP', sans-serif;
   --base-text-unit: 16;
   --rem-ratio: calc(1rem / var(--base-text-unit));
   --font-normal: 400;
-  --font-medium: 500;
   --font-semibold: 600;
   --font-bold: 700;
   --leading-initial: 1;

@@ -374,6 +374,10 @@ summary::-webkit-details-marker {
   margin-block-end: calc(11 * var(--percent-ratio-min));
 }
 
+.l-hero__pop-link {
+  display: block;
+}
+
 .l-hero__pop-image {
   z-index: var(--front-z-index);
   position: relative;

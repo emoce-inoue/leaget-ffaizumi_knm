@@ -3,19 +3,28 @@ const triggerMenu = () => {
   const button = document.querySelector('.l-button');
   const navLinks = document.querySelectorAll('.l-nav__link');
 
+  if (!header || !button) {
+    return;
+  }
+
   button.addEventListener('click', () => {
     header.classList.toggle('l-header--opened');
 
-    const isOpened = header.classList.contains('l-header--opened');
-    button.setAttribute('aria-expanded', isOpened);
+    if (header.classList.contains('l-header--opened')) {
+      button.setAttribute('aria-expanded', 'true');
+    } else {
+      button.setAttribute('aria-expanded', 'false');
+    }
   });
 
-  navLinks.forEach((link) => {
-    link.addEventListener('click', () => {
-      header.classList.remove('l-header--opened');
-      button.setAttribute('aria-expanded', 'false');
+  if (navLinks.length > 0) {
+    navLinks.forEach((link) => {
+      link.addEventListener('click', () => {
+        header.classList.remove('l-header--opened');
+        button.setAttribute('aria-expanded', 'false');
+      });
     });
-  });
+  }
 };
 
 const triggerCta = () => {

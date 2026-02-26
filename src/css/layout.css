@@ -843,3 +843,9 @@
   color: var(--background-base);
   letter-spacing: var(--tracking-tight);
 }
+
+@media (any-hover: hover) {
+  .l-qa__content--question:hover {
+    cursor: pointer;
+  }
+}

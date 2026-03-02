@@ -2,26 +2,27 @@ const triggerMenu = () => {
   const header = document.querySelector('.l-header');
   const button = document.querySelector('.l-button');
   const navLinks = document.querySelectorAll('.l-nav__link');
+  const body = document.body;
 
   if (!header || !button) {
     return;
   }
 
-  button.addEventListener('click', () => {
-    header.classList.toggle('l-header--opened');
+  const toggleMenu = (isOpen) => {
+    header.classList.toggle('l-header--opened', isOpen);
+    button.setAttribute('aria-expanded', isOpen);
+    body.classList.toggle('l-body---fixed', isOpen);
+  };
 
-    if (header.classList.contains('l-header--opened')) {
-      button.setAttribute('aria-expanded', 'true');
-    } else {
-      button.setAttribute('aria-expanded', 'false');
-    }
+  button.addEventListener('click', () => {
+    const isOpening = !header.classList.contains('l-header--opened');
+    toggleMenu(isOpening);
   });
 
   if (navLinks.length > 0) {
     navLinks.forEach((link) => {
       link.addEventListener('click', () => {
-        header.classList.remove('l-header--opened');
-        button.setAttribute('aria-expanded', 'false');
+        toggleMenu(false);
       });
     });
   }

@@ -854,7 +854,7 @@ body.l-body---fixed {
     max-inline-size: 375px;
   }
 
-  .l-sticky-cta--fixed {
+  .l-sticky-cta {
     max-inline-size: 375px;
   }
 }

@@ -1,8 +1,10 @@
 /* layout */
 
+body.l-body---fixed {
+  overflow: hidden;
+}
+
 .l-wrapper {
-  max-inline-size: 375px;
-  margin-inline: auto;
   background-color: var(--color-pinkscale-0);
 }
 
@@ -76,7 +78,6 @@
   inset-block-start: 0;
   inset-inline-start: 50%;
   inline-size: 100%;
-  max-inline-size: 375px;
   block-size: 100svh;
   background-color: var(--background-base);
   translate: -50%;
@@ -206,7 +207,6 @@
 
 .l-cta__button-text {
   font-size: min(calc(42 * var(--fluid-ratio-min)), calc(21 * var(--rem-ratio)));
-  color: var(--color-brownscale-0);
   letter-spacing: var(--tracking-relaxed);
 }
 
@@ -231,7 +231,6 @@
   align-items: center;
   gap: calc(30 * var(--percent-ratio-min));
   inline-size: 100%;
-  max-inline-size: 375px;
   aspect-ratio: var(--aspect-sticky);
   background-color: var(--color-pinkscale-400);
   translate: -50% 100%;
@@ -308,7 +307,6 @@
   margin-block-start: calc(16 * var(--percent-ratio-min));
   padding-inline: calc(24 * var(--percent-ratio-min));
   font-size: min(calc(20 * var(--fluid-ratio-min)), calc(10 * var(--rem-ratio)));
-  color: var(--color-brownscale-0);
 }
 
 .l-worries {
@@ -450,7 +448,6 @@
 .l-point__index {
   position: relative;
   inline-size: calc((69 / 590) * 100%);
-  margin-inline-start: calc((15 / 590) * 100%);
 }
 
 .l-point__index-number {
@@ -474,6 +471,10 @@
 .l-point__list-headline-text {
   font-size: min(calc(42 * var(--fluid-ratio-min)), calc(21 * var(--rem-ratio)));
   color: var(--color-pinkscale-300);
+}
+
+.l-point__list-headline-text--second {
+  letter-spacing: var(--tracking-tightest);
 }
 
 .l-point__capture {
@@ -508,7 +509,6 @@
   margin-block-start: calc((27 / 590) * 100%);
   font-weight: var(--font-normal);
   font-size: min(calc(30 * var(--fluid-ratio-min)), calc(15 * var(--rem-ratio)));
-  color: var(--color-brownscale-0);
   line-height: var(--leading-snug);
 }
 
@@ -538,7 +538,6 @@
   display: block;
   margin-block-start: calc(25 * var(--percent-ratio-min));
   font-size: min(calc(30 * var(--fluid-ratio-min)), calc(15 * var(--rem-ratio)));
-  color: var(--color-brownscale-0);
 }
 
 .l-staff__list {
@@ -582,8 +581,8 @@
 .l-staff__text {
   margin-block-start: calc(55 * var(--percent-ratio-min));
   padding-inline: calc(98 * var(--percent-ratio-min));
+  font-weight: var(--font-medium);
   font-size: min(calc(30 * var(--fluid-ratio-min)), calc(15 * var(--rem-ratio)));
-  color: var(--color-grayscale-200);
   line-height: var(--leading-snug);
 }
 
@@ -661,8 +660,8 @@
 
 .l-step__text {
   margin-block-start: calc((44 / 570) * 100%);
+  font-weight: var(--font-medium);
   font-size: min(calc(30 * var(--fluid-ratio-min)), calc(15 * var(--rem-ratio)));
-  color: var(--color-grayscale-200);
   line-height: var(--leading-snug);
 }
 
@@ -707,7 +706,6 @@
 
 .l-qa__text {
   flex: 1;
-  color: var(--color-brownscale-0);
   line-height: var(--leading-snug);
 }
 
@@ -758,7 +756,6 @@
   margin-block-start: calc(54 * var(--percent-ratio-min));
   padding-inline: calc(50 * var(--percent-ratio-min));
   font-size: min(calc(24 * var(--fluid-ratio-min)), calc(12 * var(--rem-ratio)));
-  color: var(--color-brownscale-0);
   line-height: var(--leading-snug);
 }
 
@@ -784,7 +781,6 @@
 .l-access__howto-text {
   font-family: var(--font-sans);
   font-size: min(calc(24 * var(--fluid-ratio-min)), calc(12 * var(--rem-ratio)));
-  color: var(--color-brownscale-0);
 }
 
 .l-privacy {
@@ -841,11 +837,26 @@
   justify-content: center;
   align-items: center;
   aspect-ratio: var(--aspect-copyright);
-  background-color: var(--color-pinkscale-200);
+  background-color: var(--color-pinkscale-500);
   font-family: var(--font-sans);
   font-size: min(calc(22 * var(--fluid-ratio-min)), calc(11 * var(--rem-ratio)));
   color: var(--background-base);
-  letter-spacing: var(--tracking-tight);
+  letter-spacing: var(--tracking-tighter);
+}
+
+@media screen and (min-width: 768px) {
+  .l-wrapper {
+    max-inline-size: 375px;
+    margin-inline: auto;
+  }
+
+  .l-nav {
+    max-inline-size: 375px;
+  }
+
+  .l-sticky-cta--fixed {
+    max-inline-size: 375px;
+  }
 }
 
 @media (any-hover: hover) {

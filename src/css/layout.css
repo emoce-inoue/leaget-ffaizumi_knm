@@ -78,7 +78,8 @@ body.l-body---fixed {
   inset-block-start: 0;
   inset-inline-start: 50%;
   inline-size: 100%;
-  block-size: 100svh;
+  block-size: 100vh;
+  block-size: 100dvh;
   background-color: var(--background-base);
   translate: -50%;
   opacity: 0;

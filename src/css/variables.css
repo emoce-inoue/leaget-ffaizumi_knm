@@ -5,6 +5,7 @@
   --base-text-unit: 16;
   --rem-ratio: calc(1rem / var(--base-text-unit));
   --font-normal: 400;
+  --font-medium: 500;
   --font-semibold: 600;
   --font-bold: 700;
   --leading-initial: 1;
@@ -13,6 +14,8 @@
   --leading-normal: 1.7;
   --leading-relaxed: 1.8;
   --leading-loose: 2;
+  --tracking-tightest: -0.02em;
+  --tracking-tighter: -0.01em;
   --tracking-tight: 0.02em;
   --tracking-normal: 0.05em;
   --tracking-medium: 0.07em;
@@ -44,6 +47,7 @@
   --color-pinkscale-200: #ff2978;
   --color-pinkscale-300: #e5005a;
   --color-pinkscale-400: #dd1760;
+  --color-pinkscale-500: #e5015a;
   --color-yellowscale-0: #fff7e0;
   --color-yellowscale-100: #fdd23e;
   --color-brownscale-0: #583f48;

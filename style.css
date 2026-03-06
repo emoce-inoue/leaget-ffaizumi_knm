@@ -5,6 +5,7 @@
   --base-text-unit: 16;
   --rem-ratio: calc(1rem / var(--base-text-unit));
   --font-normal: 400;
+  --font-medium: 500;
   --font-semibold: 600;
   --font-bold: 700;
   --leading-initial: 1;
@@ -13,6 +14,8 @@
   --leading-normal: 1.7;
   --leading-relaxed: 1.8;
   --leading-loose: 2;
+  --tracking-tightest: -0.02em;
+  --tracking-tighter: -0.01em;
   --tracking-tight: 0.02em;
   --tracking-normal: 0.05em;
   --tracking-medium: 0.07em;
@@ -44,6 +47,7 @@
   --color-pinkscale-200: #ff2978;
   --color-pinkscale-300: #e5005a;
   --color-pinkscale-400: #dd1760;
+  --color-pinkscale-500: #e5015a;
   --color-yellowscale-0: #fff7e0;
   --color-yellowscale-100: #fdd23e;
   --color-brownscale-0: #583f48;
@@ -227,9 +231,11 @@ summary::-webkit-details-marker {
 
 /* layout */
 
+body.l-body---fixed {
+  overflow: hidden;
+}
+
 .l-wrapper {
-  max-inline-size: 375px;
-  margin-inline: auto;
   background-color: var(--color-pinkscale-0);
 }
 
@@ -303,8 +309,8 @@ summary::-webkit-details-marker {
   inset-block-start: 0;
   inset-inline-start: 50%;
   inline-size: 100%;
-  max-inline-size: 375px;
-  block-size: 100svh;
+  block-size: 100vh;
+  block-size: 100dvh;
   background-color: var(--background-base);
   translate: -50%;
   opacity: 0;
@@ -433,7 +439,6 @@ summary::-webkit-details-marker {
 
 .l-cta__button-text {
   font-size: min(calc(42 * var(--fluid-ratio-min)), calc(21 * var(--rem-ratio)));
-  color: var(--color-brownscale-0);
   letter-spacing: var(--tracking-relaxed);
 }
 
@@ -458,7 +463,6 @@ summary::-webkit-details-marker {
   align-items: center;
   gap: calc(30 * var(--percent-ratio-min));
   inline-size: 100%;
-  max-inline-size: 375px;
   aspect-ratio: var(--aspect-sticky);
   background-color: var(--color-pinkscale-400);
   translate: -50% 100%;
@@ -535,7 +539,6 @@ summary::-webkit-details-marker {
   margin-block-start: calc(16 * var(--percent-ratio-min));
   padding-inline: calc(24 * var(--percent-ratio-min));
   font-size: min(calc(20 * var(--fluid-ratio-min)), calc(10 * var(--rem-ratio)));
-  color: var(--color-brownscale-0);
 }
 
 .l-worries {
@@ -677,7 +680,6 @@ summary::-webkit-details-marker {
 .l-point__index {
   position: relative;
   inline-size: calc((69 / 590) * 100%);
-  margin-inline-start: calc((15 / 590) * 100%);
 }
 
 .l-point__index-number {
@@ -701,6 +703,10 @@ summary::-webkit-details-marker {
 .l-point__list-headline-text {
   font-size: min(calc(42 * var(--fluid-ratio-min)), calc(21 * var(--rem-ratio)));
   color: var(--color-pinkscale-300);
+}
+
+.l-point__list-headline-text--second {
+  letter-spacing: var(--tracking-tightest);
 }
 
 .l-point__capture {
@@ -735,7 +741,6 @@ summary::-webkit-details-marker {
   margin-block-start: calc((27 / 590) * 100%);
   font-weight: var(--font-normal);
   font-size: min(calc(30 * var(--fluid-ratio-min)), calc(15 * var(--rem-ratio)));
-  color: var(--color-brownscale-0);
   line-height: var(--leading-snug);
 }
 
@@ -765,7 +770,6 @@ summary::-webkit-details-marker {
   display: block;
   margin-block-start: calc(25 * var(--percent-ratio-min));
   font-size: min(calc(30 * var(--fluid-ratio-min)), calc(15 * var(--rem-ratio)));
-  color: var(--color-brownscale-0);
 }
 
 .l-staff__list {
@@ -809,8 +813,8 @@ summary::-webkit-details-marker {
 .l-staff__text {
   margin-block-start: calc(55 * var(--percent-ratio-min));
   padding-inline: calc(98 * var(--percent-ratio-min));
+  font-weight: var(--font-medium);
   font-size: min(calc(30 * var(--fluid-ratio-min)), calc(15 * var(--rem-ratio)));
-  color: var(--color-grayscale-200);
   line-height: var(--leading-snug);
 }
 
@@ -888,8 +892,8 @@ summary::-webkit-details-marker {
 
 .l-step__text {
   margin-block-start: calc((44 / 570) * 100%);
+  font-weight: var(--font-medium);
   font-size: min(calc(30 * var(--fluid-ratio-min)), calc(15 * var(--rem-ratio)));
-  color: var(--color-grayscale-200);
   line-height: var(--leading-snug);
 }
 
@@ -934,7 +938,6 @@ summary::-webkit-details-marker {
 
 .l-qa__text {
   flex: 1;
-  color: var(--color-brownscale-0);
   line-height: var(--leading-snug);
 }
 
@@ -985,7 +988,6 @@ summary::-webkit-details-marker {
   margin-block-start: calc(54 * var(--percent-ratio-min));
   padding-inline: calc(50 * var(--percent-ratio-min));
   font-size: min(calc(24 * var(--fluid-ratio-min)), calc(12 * var(--rem-ratio)));
-  color: var(--color-brownscale-0);
   line-height: var(--leading-snug);
 }
 
@@ -1011,7 +1013,6 @@ summary::-webkit-details-marker {
 .l-access__howto-text {
   font-family: var(--font-sans);
   font-size: min(calc(24 * var(--fluid-ratio-min)), calc(12 * var(--rem-ratio)));
-  color: var(--color-brownscale-0);
 }
 
 .l-privacy {
@@ -1068,11 +1069,26 @@ summary::-webkit-details-marker {
   justify-content: center;
   align-items: center;
   aspect-ratio: var(--aspect-copyright);
-  background-color: var(--color-pinkscale-200);
+  background-color: var(--color-pinkscale-500);
   font-family: var(--font-sans);
   font-size: min(calc(22 * var(--fluid-ratio-min)), calc(11 * var(--rem-ratio)));
   color: var(--background-base);
-  letter-spacing: var(--tracking-tight);
+  letter-spacing: var(--tracking-tighter);
+}
+
+@media screen and (min-width: 768px) {
+  .l-wrapper {
+    max-inline-size: 375px;
+    margin-inline: auto;
+  }
+
+  .l-nav {
+    max-inline-size: 375px;
+  }
+
+  .l-sticky-cta {
+    max-inline-size: 375px;
+  }
 }
 
 @media (any-hover: hover) {
